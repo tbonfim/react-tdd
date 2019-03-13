@@ -22,3 +22,9 @@ it('Should set page title to the value of the inputs ( name + lastName)', ()=>{
   expect(document.title).toBe('Test First');
 });
 
+it('Should update page title to the value of the inputs ( name + lastName) when it changes', ()=>{
+  const wrapper = mount(<ComponentToBeTested />);
+  wrapper.find('#name').value('Always');
+  wrapper.find('#lastName').value('Test')
+  expect(document.title).toBe('Always Test');
+});
