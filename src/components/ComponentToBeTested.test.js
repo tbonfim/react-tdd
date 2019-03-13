@@ -16,3 +16,9 @@ it('Should have at least 2 input fields', () => {
   const wrapper = mount(<ComponentToBeTested />);
   expect(wrapper.find('input')).toHaveLength(2);
 });
+
+it('Should set page title to the value of the inputs ( name + lastName)', ()=>{
+  const wrapper = mount(<ComponentToBeTested />);
+  expect(document.title).toBe('Test First');
+});
+
